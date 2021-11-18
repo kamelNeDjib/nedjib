@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <title>help</title>
+</head>
+<style>
+    .title {
+        text-shadow: -2px -2px 0px #fff, 0px -2px 0px #fff, 2px -2px 0px #fff, -2px 0px 0px #fff, 2px 0px 0px #fff, -2px 2px 0px #fff, 0px 2px 0px #fff, 2px 2px 0px #fff;
+    }
+    
+    .card {
+        height: 330px;
+    }
+    
+    .card-text {
+        height: 60%;
+    }
+</style>
+
+<body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a href="home.php" class="navbar-brand font-weight-bold">Library</a>
+            <button class="navbar-toggler" style="border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#dropdownItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-primary" style="border-radius: 3px;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="dropdownItems">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-4">
+                    <li class="nav-item">
+                        <a class="nav-link mx-1 text-light rounded bg-dark my-lg-0 my-md-1 my-sm-1 my-1 text-center" aria-current="page" href="home.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1 active text-dark rounded bg-light my-lg-0 my-md-1 my-sm-1 my-1 text-center" href="books.php">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1 text-dark active rounded bg-light my-lg-0 my-md-1 my-sm-1 my-1 text-center" href="notification.php?notif_pressed=1">Notification
+                        <?php if($notif_number>0): ?> <span class="badge bg-danger text-white"> <?php echo $notif_number; ?> </span> <?php endif; ?>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1 text-dark active rounded bg-light my-lg-0 my-md-1 my-sm-1 my-1 text-center" href="#">Help</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-1 active rounded text-dark bg-light my-lg-0 my-md-1 my-sm-1 my-1 text-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contacts
+                    </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-center" href="#">Facebook</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center" href="#">Twitter</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center" href="#">Gmail</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <?php if(!isset($_SESSION['userid']) || $_SESSION['verified']==0): ?>
+                  <ul class="navbar-nav ml-auto mb-2 mb-lg0">
+                    <li class="nav-item mt-2 mb-2 mr-lg-3 ml-lg-3 ml-4"><a class="btn btn-danger me-3" href="singup.php" role="button">SingUp</a></li>
+                    <li class="nav-item mt-2 mb-2 mr-lg-3 ml-lg-3 ml-4"><a class="btn btn-primary me-3" href="login.php" role="button">LogIn</a></li>
+                <?php endif; ?>
+                <?php if(isset($_SESSION['userid']) && $_SESSION['verified']==1): ?>
+                   <ul class="navbar-nav ml-auto mb-2 mb-lg0">
+                     <li class="nav-item mt-2 mb-2 mr-lg-3 ml-lg-3 ml-4"><a class="btn btn-danger me-3" href="logout.php?logout=1" role="button">Logout</a></li>
+                 <?php endif; ?>
+            </div>
+    </nav>
+    <h3 class="text-primary title col-8 py-5 my-4 mx-auto text-center">Welcome To The Help Page Where You Can Learn With Details How This Website Really Works</h3>
+    <div class="container-fluid py-3 my-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex align-items-center"><img src="home.svg" alt="" width="30px" height="30px"><span class="mx-2">Home Page</span></h5>
+                        <hr class="bg-dark m-1">
+                        <p class="card-text m-0 text-center">In this page we display some important infomation that's any client maybe intersted in like the upcomming books and the new books , also we offer in this page some recommadation that will probably help you to choose the book that
+                            you will rent</p>
+                        <hr class="bg-dark m-1">
+                        <a href="home.php" class="btn my-2 btn-primary">Go To See</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="booksI.svg" alt="" width="30px" height="30px"><span class="mx-2">Books Page</span></h5>
+                        <hr class="bg-dark m-1">
+                        <p class="card-text m-0 text-center">here you can find all the books , also you can search for any book with many choices,with the book itself,with the book author,with the minimum pages number of the book,with the maximum pages number of the book, and finally with book category, also we support searching with suggestions that could save you some time</p>
+                        <hr class="bg-dark m-1">
+                        <a href="books.php" class="btn my-2 btn-primary">Go To See</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="notifications.svg" alt="" width="30px" height="30px"><span class="mx-2">Notification Page</span></h5>
+                        <hr class="bg-dark m-1">
+                        <p class="card-text m-0 text-center">here you can find all the news of the library , also we support a notification counter that shows you the number of the latest news</p>
+                        <hr class="bg-dark m-1">
+                        <a href="notification.php" class="btn my-2 btn-primary">Go To See</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="signup.svg" alt="" width="30px" height="30px"><span class="mx-2">SignUp Page</span></h5>
+                        <hr class="bg-dark m-1">
+                        <p class="card-text m-0 text-center">here you can create your own account so you can have a lot of features</p>
+                        <hr class="bg-dark m-1">
+                        <a href="singup.php" class="btn my-2 btn-primary">Go To See</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="login.svg" alt="" width="30px" height="30px"><span class="mx-2">Login Page</span></h5>
+                        <hr class="bg-dark m-1">
+                        <p class="card-text m-0 text-center">here you will get the acces to your personal account , also we support a forgot password system in case you have forgotten your own password , you will be able to enter a new password</p>
+                        <hr class="bg-dark m-1">
+                        <a href="login.php" class="btn my-2 btn-primary">Go To See</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="book.svg" alt="" width="30px" height="30px"><span class="mx-2">Book Page</span></h5>
+                        <hr class="bg-dark m-1">
+                        <p class="card-text m-0 text-center">here is the book page where we support a lot of features such as renting a book,returning a book if it's already rented,comment a book a give your personal opinion,rate a book out of 5 based of wether you like the book or not</p>
+                        <hr class="bg-dark m-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

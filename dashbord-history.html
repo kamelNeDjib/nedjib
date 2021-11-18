@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body,
+    .all {
+        height: 100%;
+        margin: 0;
+    }
+    
+    .all {
+        position: relative;
+    }
+    
+    body {
+        overflow-y: scroll;
+    }
+    
+    .sidebar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: #212529;
+        color: white;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .menu li {
+        text-align: center;
+        list-style: none;
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .menu li {
+        text-align: center;
+    }
+    
+    .menu li a {
+        position: relative;
+        border: none;
+    }
+    
+    .menu .btn {
+        width: 300px;
+    }
+    
+    .info-box {
+        height: auto;
+    }
+    
+    .content {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .info-box div {
+        height: 150px;
+        display: flex;
+        border: 2px solid;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        text-align: center;
+        text-align-last: center;
+    }
+    
+    .info-box div .title {
+        font-size: 20px;
+    }
+    
+    @media only screen and (max-width: 1200px) {
+        .info-box div .title {
+            font-size: 15px;
+        }
+    }
+    
+    @media only screen and (max-width: 992px) {
+        .menu li a,
+        .footer a {
+            border-radius: 0px;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .menu li a,
+        .footer a {
+            border-radius: 0px;
+        }
+        .info-box div .title {
+            font-size: 18px;
+        }
+        table {
+            font-size: 14px;
+        }
+    }
+    
+    @media only screen and (max-width: 576px) {
+        .info-box div .title {
+            font-size: 20px;
+        }
+        table {
+            font-size: 11px;
+        }
+        .btn-danger,
+        .btn-light {
+            font-size: 13px;
+        }
+    }
+    
+    @media only screen and (max-width: 400px) {
+        .content {
+            width: 100%;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            transform: translate(-100%, 0);
+        }
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        table {
+            font-size: 8px;
+        }
+        .btn-danger,
+        .btn-light {
+            font-size: 8px;
+        }
+    }
+</style>
+
+<body>
+    <div class="all container-fluid p-0 row">
+        <div class="col-lg-3 col-1 container-fluid mx-auto sidebar p-lg-3 p-0">
+            <div class="title row mx-0 py-4 px-0">
+                <h5 class="col-10 d-flex justify-content-center"><span class="d-lg-none"><img src="books.svg" width="30px" height="30px"></span><span class="d-none d-lg-block">Library</span></h5>
+            </div>
+            <ul class="menu row mx-0 py-5 px-0">
+                <li class="col-12 row p-0">
+                    <a href="dashbord-home.html" class="col-12 btn btn-primary px-0 my-2"><img src="home.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Home</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-add_book.html" class="col-12 btn btn-primary px-0 my-2"><img src="add-book.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Add a book</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-accounts.html" class="col-12 btn btn-primary px-0 my-2"><img src="accounts.svg" class="d-lg-none d-block mx-auto" width="27px" height="27px"><span class="d-none d-lg-block">Accounts</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-comments.html" class="col-12 btn btn-primary px-0 my-2"><img src="comments-dashbord.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Comments</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-news.html" class="col-12 btn btn-primary px-0 my-2"><img src="news.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Add a news</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-history.html" class="col-12 btn btn-light px-0 my-2"><img src="history.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">history</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-upcoming_books.html" class="col-12 btn btn-primary px-0 my-2"><img src="upcoming_book.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Add a Upcoming book</span></a>
+                </li>
+            </ul>
+            <div class="mx-0 footer py-3 row">
+                <a href="#" class="btn btn-danger col-12 px-0"><img src="exit.svg" class="d-lg-none d-block mx-auto" width="30px" height="30px"><span class="d-none d-lg-block">Exit</span></a>
+            </div>
+        </div>
+        <div class="col-lg-9 col-11 row container-fluid bg-light mx-0 content p-0">
+            <h2 class="text-white text-center d-lg-none d-block p-2 col-12" style="background-color:#212529;">History</h2>
+            <div class="col-12 info-box mx-auto d-flex justify-content-center p-3">
+                <table border="2 white" width="100%">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <td class="text-center p-2" width="10%">
+                                Id
+                            </td>
+                            <td class="text-center p-2" width="35%">
+                                Usename
+                            </td>
+                            <td class="text-center p-2" width="35%">
+                                Book Title
+                            </td>
+                            <td class="text-center p-2" width="20%">
+                                The Date
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center p-1">1</td>
+                            <td class="text-center p-1">Ilyes Drouiche</td>
+                            <td class="text-center p-1">classroom of the elite</td>
+                            <td class="text-center text-success font-weight-bold p-1">2021-06-09</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js\bootstrap.bundle.min.js "></script>
+</body>
+
+</html>

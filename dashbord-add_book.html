@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body,
+    .all {
+        height: 100%;
+        margin: 0;
+    }
+    
+    .all {
+        position: relative;
+    }
+    
+    body {
+        overflow-y: scroll;
+    }
+    
+    .sidebar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: #212529;
+        color: white;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .menu li {
+        text-align: center;
+        list-style: none;
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .menu li {
+        text-align: center;
+    }
+    
+    .menu li a {
+        position: relative;
+        border: none;
+    }
+    
+    .menu .btn {
+        width: 300px;
+    }
+    
+    .content {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .box-nbr-inputs,
+    .box-txt-inputs {
+        outline: none;
+        border: 1px solid #0066ff;
+        border-radius: 3px;
+        height: 30px;
+    }
+    
+    .box-nbr-inputs:focus {
+        outline: none;
+        border: 1px solid #0066ff;
+        box-shadow: 0 0 0 5px #0066ff86;
+    }
+    
+    .inpt-box {
+        position: relative;
+    }
+    
+    .error,
+    .error_nbr,
+    .error_radio,
+    .error_file {
+        text-align: center;
+        text-align-last: center;
+        z-index: 1;
+        height: 20px;
+        font-size: 12px;
+        color: red;
+    }
+    
+    .error_nbr,
+    .error_radio {
+        visibility: hidden;
+    }
+    
+    .error_radio,
+    .error_file {
+        text-align-last: start;
+        text-align: start;
+    }
+    
+    textarea {
+        border: 1px solid #0066ff;
+        border-radius: 3px;
+    }
+    
+    textarea:focus {
+        outline: none;
+        border: 1px solid #0066ff;
+        box-shadow: 0 0 0 5px #0066ff86;
+    }
+    
+    .field-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #myimg {
+        border: 1px solid #0066ff;
+        outline: none;
+        width: 250px;
+    }
+    
+    .upload-txt {
+        font-size: 15px;
+        width: 270px;
+    }
+    
+    @media only screen and (max-width: 992px) {
+        .menu li a,
+        .footer a {
+            border-radius: 0px;
+        }
+        #myimg {
+            border: 1px solid #0066ff;
+            outline: none;
+            width: 230px;
+        }
+        .upload-txt {
+            font-size: 15px;
+            width: 250px;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .menu li a,
+        .footer a {
+            border-radius: 0px;
+        }
+        #myimg {
+            border: 1px solid #0066ff;
+            outline: none;
+            width: 230px;
+        }
+        .upload-txt {
+            font-size: 15px;
+            width: 270px;
+        }
+    }
+    
+    @media only screen and (max-width: 576px) {
+        table {
+            font-size: 13px;
+        }
+        .btn-danger,
+        .btn-light {
+            font-size: 13px;
+        }
+        #myimg {
+            border: 1px solid #0066ff;
+            outline: none;
+            width: 250px;
+        }
+        .upload-txt {
+            font-size: 15px;
+            width: 270px;
+        }
+    }
+    
+    @media only screen and (max-width: 400px) {
+        .content {
+            width: 100%;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            transform: translate(-100%, 0);
+        }
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        #myimg {
+            border: 1px solid #0066ff;
+            outline: none;
+            width: 100px;
+        }
+        .upload-txt {
+            width: 120px;
+        }
+        .upload-txt {
+            font-size: 15px;
+            width: 270px;
+        }
+        .btn-danger,
+        .btn-light {
+            font-size: 8px;
+        }
+    }
+</style>
+
+<body>
+    <div class="all container-fluid p-0 row">
+        <div class="col-lg-3 col-1 container-fluid mx-auto sidebar p-lg-3 p-0">
+            <div class="title row mx-0 py-4 px-0">
+                <h5 class="col-10 d-flex justify-content-center"><span class="d-lg-none"><img src="books.svg" width="30px" height="30px"></span><span class="d-none d-lg-block">Library</span></h5>
+            </div>
+            <ul class="menu row mx-0 py-5 px-0">
+                <li class="col-12 row p-0">
+                    <a href="dashbord-home.html" class="col-12 btn btn-primary px-0 my-2"><img src="home.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Home</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-add_book.html" class="col-12 btn btn-light px-0 my-2"><img src="add-book.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Add a book</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-accounts.html" class="col-12 btn btn-primary px-0 my-2"><img src="accounts.svg" class="d-lg-none d-block mx-auto" width="27px" height="27px"><span class="d-none d-lg-block">Accounts</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-comments.html" class="col-12 btn btn-primary px-0 my-2"><img src="comments-dashbord.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Comments</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-news.html" class="col-12 btn btn-primary px-0 my-2"><img src="news.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Add a news</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-history.html" class="col-12 btn btn-primary px-0 my-2"><img src="history.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">history</span></a>
+                </li>
+                <li class="col-12 row p-0">
+                    <a href="dashbord-upcoming_books.html" class="col-12 btn btn-primary px-0 my-2"><img src="upcoming_book.svg" class="d-lg-none mx-auto d-block" width="27px" height="27px"><span class="d-none d-lg-block">Add a Upcoming book</span></a>
+                </li>
+            </ul>
+            <div class="mx-0 footer py-3 row">
+                <a href="#" class="btn btn-danger col-12 px-0"><img src="exit.svg" class="d-lg-none d-block mx-auto" width="30px" height="30px"><span class="d-none d-lg-block">Exit</span></a>
+            </div>
+        </div>
+        <div class="col-lg-9 col-11 row container-fluid bg-light mx-0 content p-0">
+            <h2 class="text-white text-center d-lg-none d-block p-2 col-12" style="background-color:#212529;">Add A Book</h2>
+            <form class="box col-12 m-lg-2 m-md-2 m-sm-2 m-1 p-3">
+                <div class="all-txt row p-0">
+                    <div class="box-txt col-lg-7 col-md-7 col-sm-7 col-10">
+                        <div class="field-info my-3">
+                            <label for="b-title" class="l-txt my-1 font-weight-bold">Book Title :</label>
+                            <div class="inpt-box col-lg-8 col-md-9 col-sm-12 col-12 ">
+                                <input type="text" id="b-title" class="col-12 box-txt-inputs my-1 px-2" onfocusout="textVerification(0)" onfocus="f_style(),changeValue()">
+                                <div class="error p-0 col-12"></div>
+                            </div>
+                        </div>
+                        <div class="field-info my-3">
+                            <label for="m-author" class="l-txt my-1 font-weight-bold">The Main Author :</label>
+                            <div class="inpt-box col-lg-8 col-md-9 col-sm-12 col-12">
+                                <input type="text" id="m-author" class="col-12 box-txt-inputs my-1 px-2" onfocusout="textVerification(1)" onfocus="f_style(),changeValue()">
+                                <div class="error p-0 col-12"></div>
+                            </div>
+                        </div>
+                        <div class="field-info my-3">
+                            <label for="s-author" class="l-txt my-1 font-weight-bold">The Secondary Author :</label>
+                            <div class="inpt-box col-lg-8 col-md-9 col-sm-12 col-12">
+                                <input type="text" id="s-author" class="col-12 box-txt-inputs my-1 px-2" onfocusout="textVerification(2)" onfocus="f_style(),changeValue()">
+                                <div class="error p-0 col-12"></div>
+                            </div>
+                        </div>
+                        <div class="field-info my-3">
+                            <label for="s-author" class="l-txt my-1 font-weight-bold">The Publisher company :</label>
+                            <div class="inpt-box col-lg-8 col-md-9 col-sm-12 col-12">
+                                <input type="text" id="s-author" class="col-12 box-txt-inputs my-1 px-2" onfocusout="textVerification(3)" onfocus="f_style(),changeValue()">
+                                <div class="error p-0 col-12"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img col-lg-4 col-md-4 col-sm-7 col-10">
+                        <div class="file-upload mx-auto my-3">
+                            <label for="b-title" class="my-1 font-weight-bold">Upload Your Image Here :</label>
+                            <input type="file" title="uiy" class="upload-txt mx-3 my-1" name="" id="file" onfocus="changeValue()" onchange="upload_img()">
+                            <img src="upload-img.svg" id="myimg" class="rounded mx-3 my-2 p-4" height="350px">
+                            <div class="error_file"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="radio-aria col-12 p-0">
+                    <div class="col-12 box-c">
+                        <div class="col-12 font-weight-bold row">Categories</div>
+                        <div class="row col-12 mx-auto">
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-1" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-1">Sociologie</label>
+                            </div>
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-2" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-2">Medical</label>
+                            </div>
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-3" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-3">Philosophie</label>
+                            </div>
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-4" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-4"> physic</label>
+                            </div>
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-5" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-5">literature</label>
+                            </div>
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-6" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-6">mathematics</label>
+                            </div>
+                            <div class="box col-lg-3 col-md-4 col-6 my-2">
+                                <input class="form-check-input inpt-radio" type="radio" name="category" id="flexCheckDefault-7" onfocus="changeValue()">
+                                <label class="form-check-label" for="flexCheckDefault-7">historie</label>
+                            </div>
+                        </div>
+                        <div class="col-12 error_radio">You Must Choose A Category</div>
+                    </div>
+                </div>
+                <div class="col-12 row p-0">
+                    <div class="field-info col-lg-4 col-md-4 col-sm-6 col-8 my-2">
+                        <label for="s-author" class="my-1 font-weight-bold">The Number of Pages :</label>
+                        <div class="inpt-box col-lg-8 col-md-8 col-sm-8 col-11">
+                            <input type="number" id="s-author" value="0" min="0" class="col-12 box-nbr-inputs my-1 px-2" onfocusout="nbr_f()" onfocus="f2_style(),changeValue()">
+                            <div class="error_nbr">The Number Of The Book Page Shoudn't Be 0</div>
+                        </div>
+                    </div>
+                    <div class="field-info col-lg-4 col-md-4 col-sm-6 col-8 my-2">
+                        <label for="s-author" class="my-1 font-weight-bold">The Amount :</label>
+                        <div class="inpt-box col-lg-8 col-md-8 col-sm-8 col-11">
+                            <input type="number" id="s-author" value="0" min="0" class="col-12 box-nbr-inputs my-1 px-2" onfocusout="nbr_f()" onfocus="f2_style(),changeValue()">
+                            <div class="error_nbr">The Amount Shoudn't Be 0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-info col-lg-10 my-2 p-0">
+                    <label for="s-author" class="my-1 font-weight-bold">Book Summary :</label>
+                    <textarea name="" placeholder="write the summary here" rows="10" class="my-comment p-2 my-1" onfocus="changeValue()"></textarea>
+                </div>
+                <div class="box col-lg-6 col-md-6 col-12 my-2">
+                    <input class="form-check-input" type="checkbox" name="category" id="checkboxV" onclick="verfier()">
+                    <label class="form-check-label" for="checkboxV">Are Sure Of Your Information</label>
+                </div>
+                <input type="submit" class="btn col-lg-2 col-md-2 col-sm-3 col-5 btn-success send" disabled value="Send">
+            </form>
+        </div>
+    </div>
+    <script>
+        var inpt = document.getElementsByClassName("box-txt-inputs"),
+            error = document.getElementsByClassName("error"),
+            inpt_radio = document.getElementsByClassName("inpt-radio"),
+            inpt_nbr = document.getElementsByClassName("box-nbr-inputs"),
+            inpts = document.getElementsByTagName('INPUT'),
+            summary = document.getElementsByTagName("TEXTAREA")[0],
+            checkV = document.getElementById("checkboxV"),
+            send = document.getElementsByClassName("send")[0],
+            error_nbr = document.getElementsByClassName("error_nbr"),
+            error_radio = document.getElementsByClassName("error_radio")[0],
+            file = document.getElementById("file"),
+            error_file = document.getElementsByClassName("error_file")[0],
+            img = document.querySelector('#myimg');
+
+        function f_style() {
+            for (let i = 0; i < inpt.length; i++) {
+                if (document.activeElement == inpt[i]) {
+                    inpt[i].style.outline = "transparent";
+                    inpt[i].style.border = "solid 1px #0066ff";
+                    inpt[i].style.boxShadow = "0 0 0 5px #0066ff86";
+                    return 0;
+                }
+            }
+        }
+
+        function f2_style() {
+            for (let i = 0; i < inpt_nbr.length; i++) {
+                if (document.activeElement == inpt_nbr[i]) {
+                    inpt_nbr[i].style.outline = "transparent";
+                    inpt_nbr[i].style.border = "solid 1px #0066ff";
+                    inpt_nbr[i].style.boxShadow = "0 0 0 5px #0066ff86";
+                    return 0;
+                }
+            }
+        }
+
+        function nbr_f() {
+            for (let i = 0; i < inpt_nbr.length; i++) {
+                inpt_nbr[i].style.border = "solid 1px #0066ff";
+                inpt_nbr[i].style.boxShadow = "none";
+            }
+        }
+
+        function textVerification(index) {
+            var v = 0;
+            for (let i = 0; i < inpt.length; i++) {
+                inpt[i].style.border = "solid 1px #0066ff";
+                inpt[i].style.boxShadow = "none";
+            }
+            let str = inpt[index].value;
+            if (str.length) {
+                for (let i = 0; i < str.length; i++) {
+                    if (!((str[i] >= "A" && str[i] <= "Z") || (str[i] == " ") || (str[i] >= "a" && str[i] <= "z") || (str[i] >= 1 && str[i] <= 9))) {
+                        error[index].innerText = "This Information Shoudn't Contains A Special Character";
+                        inpt[index].style.boxShadow = "0 0 0 5px rgba(255, 0, 0, 0.657)";
+                        inpt[index].style.border = "solid 1.5px red";
+                        for (let i = 0; i < inpts.length; i++) {
+                            if (i != index) {
+                                inpts[i].setAttribute("disabled", "");
+                            }
+                        }
+                        summary.setAttribute("disabled", "");
+                        return 0;
+                    } else {
+                        for (let i = 0; i < inpts.length - 1; i++) {
+                            if (i != index) {
+                                inpts[i].removeAttribute("disabled", "");
+                            }
+                        }
+                        summary.removeAttribute("disabled", "");
+                        error[index].innerText = "";
+                        inpt[index].style.boxShadow = "none";
+                        inpt[index].style.border = "solid 1.5px #0066ff";
+                    }
+                }
+                if (!isNaN(parseFloat(str))) {
+                    for (let i = 0; i < inpts.length; i++) {
+                        if (i != index) {
+                            inpts[i].setAttribute("disabled", "");
+                        }
+                    }
+                    summary.setAttribute("disabled", "");
+                    error[index].innerText = "This Information Shoudn't Contains Only Numbers And Begin With A Number";
+                    inpt[index].style.boxShadow = "0 0 0 5px rgba(255, 0, 0, 0.657)";
+                    inpt[index].style.border = "solid 1.5px red";
+                }
+            } else {
+                for (let i = 0; i < inpts.length - 1; i++) {
+                    if (i != index) {
+                        inpts[i].removeAttribute("disabled", "");
+                    }
+                }
+                summary.removeAttribute("disabled", "");
+                error[index].innerText = "";
+                inpt[index].style.boxShadow = "none";
+                inpt[index].style.border = "solid 1.5px #0066ff";
+            }
+        }
+
+        function verfier() {
+            for (let i = 0; i < inpt.length; i++) {
+                if (inpt[i].value != "") {
+                    send.removeAttribute("disabled", "");
+                    error[i].innerText = "";
+                    inpt[i].style.boxShadow = "none";
+                    inpt[i].style.border = "solid 1.5px #0066ff";
+                } else {
+                    if (i != 2) {
+                        error[i].innerText = "This Information Shoudn't Be Empty";
+                        inpt[i].style.boxShadow = "0 0 0 5px rgba(255, 0, 0, 0.657)";
+                        inpt[i].style.border = "solid 1.5px red";
+                        send.setAttribute("disabled", "");
+                        return 0;
+                    }
+                }
+            }
+            for (let i = 0, j = 0; i < inpt_radio.length; i++) {
+                if (inpt_radio[i].checked) {
+                    for (let i = 0; i < inpt_radio.length; i++) {
+                        inpt_radio[i].style.outline = "none";
+                    }
+                    send.removeAttribute("disabled", "");
+                    error_radio.style.visibility = "hidden";
+                    break;
+                } else {
+                    j++;
+                }
+                if (j == inpt_radio.length) {
+                    for (let i = 0; i < inpt_radio.length; i++) {
+                        inpt_radio[i].style.outline = "red solid 2px";
+                    }
+                    error_radio.style.visibility = "visible";
+                    send.setAttribute("disabled", "");
+                    return 0;
+                }
+            }
+            for (let i = 0; i < inpt_nbr.length; i++) {
+                if (inpt_nbr[i].value != 0) {
+                    error_nbr[i].style.visibility = "hidden";
+                    inpt_nbr[i].style.border = "solid 1.5px #0066ff";
+                    send.removeAttribute("disabled", "");
+                } else {
+                    inpt_nbr[i].style.border = "solid 1.5px red";
+                    error_nbr[i].style.visibility = "visible";
+                    send.setAttribute("disabled", "");
+                    return 0;
+                }
+            }
+            if (summary.value == "") {
+                summary.placeholder = "the summary is empty"
+                summary.style.border = "solid 1.5px red";
+                summary.style.boxShadow = "0 0 0 5px rgba(255, 0, 0, 0.657)";
+                send.setAttribute("disabled", "");
+                return 0;
+            } else {
+                send.removeAttribute("disabled", "");
+                summary.placeholder = "write the summary here"
+                summary.style.boxShadow = "none";
+                summary.style.border = "solid 1.5px #0066ff";
+            }
+            if (file.files.length == 0) {
+                error_file.innerText = "No File Selected";
+                img.style.border = "solid 1.5px red";
+                send.setAttribute("disabled", "");
+                return 0;
+            } else {
+                img.style.border = "solid 1.5px #0066ff";
+                send.removeAttribute("disabled", "");
+            }
+            if (checkV.checked) send.removeAttribute("disabled", "");
+            else send.setAttribute("disabled", "");
+        }
+
+        function changeValue() {
+            checkV.checked = false
+            send.setAttribute("disabled", "");
+        }
+
+        function isFileImage(file) {
+            return file.files[0]['type'].split('/')[0] === 'image';
+        }
+
+        function upload_img() {
+            if (isFileImage(file)) {
+                error_file.innerText = "";
+                img.style.border = "solid 1.5px #0066ff";
+                checkV.removeAttribute("disabled", "");
+                return 1;
+            } else {
+                img.style.border = "solid 1.5px red";
+                error_file.innerText = "The file Uploaded Is Not An Image";
+                checkV.setAttribute("disabled", "");
+                return 0;
+            }
+        }
+        window.addEventListener('load', function() {
+            document.querySelector('input[type="file"]').addEventListener('change', function() {
+                if (file.files && file.files[0]) {
+                    img.onload = () => {
+                        if (isFileImage(file)) {
+                            URL.revokeObjectURL(img.src);
+                            img.setAttribute("class", "mx-3 my-2 p-0");
+                        }
+                    }
+                    if (isFileImage(file))
+                        img.src = URL.createObjectURL(file.files[0]);
+                }
+            });
+        });
+    </script>
+    <script src="js\bootstrap.bundle.min.js "></script>
+</body>
+
+</html>

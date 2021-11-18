@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <title>Books</title>
+</head>
+<style>
+    .book-line .row .col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card {
+        width: 180px;
+        transition: .4s;
+    }
+    
+    .card img {
+        height: 250px;
+    }
+    
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 1px 5px 15px #888888;
+        text-decoration: none;
+    }
+    
+    .title-card {
+        height: 50px;
+        color: black;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    #first_letter {
+        font-size: 40px;
+    }
+</style>
+
+<body>
+    <div class="container p-2 my-3" style="background-color: rgb(200, 200, 200)">
+        <form action="">
+            <div class="box my-2 row d-flex justify-content-center">
+                <input class="form-control col-10" type="search" id="search_1_box" placeholder="Search With Book Name" autocomplete="off" aria-label="Search">
+            </div>
+            <div class="box my-2 row d-flex justify-content-center">
+                <input class="form-control col-md-6 m-1 col-10" type="search" id="search_2_box" placeholder="Author Name" autocomplete="off" aria-label="Search">
+                <input type="number" class="col-md-2 m-1 col-5" placeholder="max pages" id="max_pages">
+                <input type="number" class="col-md-2 m-1 col-5" placeholder="mix pages" id="min_pages">
+            </div>
+            <div class="checkbox-aria row d-flex justify-content-center">
+                <div class="col col-3">
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-1">
+                        <label class="form-check-label" for="flexCheckDefault-1">
+                  the name of the category
+                </label>
+                    </div>
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-2">
+                        <label class="form-check-label" for="flexCheckDefault-2">
+                  the name of the category
+                </label>
+                    </div>
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-3">
+                        <label class="form-check-label" for="flexCheckDefault-3">
+                  the name of the category
+                </label>
+                    </div>
+                </div>
+                <div class="col col-3">
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-4">
+                        <label class="form-check-label" for="flexCheckDefault-4">
+                  the name of the category
+                </label>
+                    </div>
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-5">
+                        <label class="form-check-label" for="flexCheckDefault-5">
+                  the name of the category
+                </label>
+                    </div>
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-6">
+                        <label class="form-check-label" for="flexCheckDefault-6">
+                  the name of the category
+                </label>
+                    </div>
+                </div>
+                <div class="col col-3">
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-7">
+                        <label class="form-check-label" for="flexCheckDefault-7">
+                  the name of the category
+                </label>
+                    </div>
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-8">
+                        <label class="form-check-label" for="flexCheckDefault-8">
+                  the name of the category
+                </label>
+                    </div>
+                    <div class="box m-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-9">
+                        <label class="form-check-label" for="flexCheckDefault-9">
+                  the name of the category
+                </label>
+                    </div>
+                </div>
+            </div>
+            <div class="box d-flex justify-content-center m-2">
+                <button class="btn btn-success" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="book-line">
+            <h1 id="first_letter" class="text-primary">A</h1>
+            <hr>
+            <div class="row">
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="book-line my-3">
+            <h1 id="first_letter" class="text-primary">B</h1>
+            <hr>
+            <div class="row">
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center">even the long Card title work</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <?php while($S<= 'Z'): ?>
+    <?php for($i=0;$i<sizeof($nomlivre);$i++): ?>
+    <?php if($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S) ): ?>
+    <div class="book-line my-3">
+        <?php if($a<70): ?>
+            <h1 id="first_letter" class="text-primary"><?php echo $S;?></h1>
+        <?php $a=70; endif; ?>
+        <hr>
+        <div class="row">
+            <div class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                        <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+            <div id="hide" class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                        <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+            <div id="hide2"class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                         <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+            <div id="hide3" class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                            <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
+    <?php endfor;?>
+    <?php $a=69; $b=69; $S++; ?>
+    <?php endwhile;?>
+    
+
+    <?php for($i=0;$i<sizeof($nomlivre);$i++): ?>
+    <?php if(is_numeric($nomlivre[$i][0])==1): ?>
+        <div class="book-line">
+        <?php if($b<70): ?>
+            <h1 id="first_letter" class="text-primary"><?php echo "Numeric";?></h1>
+        <?php $b=70; endif; ?>
+        <hr>
+        <div class="row">
+            <div class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                        <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
+    <?php endfor;?>            
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <?php while($S<= 'Z'): ?>
+    <?php for($i=0;$i<sizeof($nomlivre)-3;$i=$i+4): ?>
+    <?php $i2=$i+1; $i3=$i+2; $i4=$i+3; ?>
+    <?php if($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S) ): ?>
+    <div class="book-line my-3">
+        <?php if($a<70): ?>
+            <h1 id="first_letter" class="text-primary"><?php echo $S;?></h1>
+        <?php $a=70; endif; ?>
+        <hr>
+        <div class="row">
+          <?php if($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S) ): ?>
+           <?php //if($nomlivre[$i][0]!=$S || $nomlivre[$i][0]== strtolower($S) ): ?>
+            <div class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                        <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+          <?php endif;?>
+
+          <?php if($nomlivre[$i2][0]==$S || $nomlivre[$i2][0]== strtolower($S) ): ?>
+            <div id="hide" class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                        <div class="title-card text-danger text-center"><?php echo $nomlivre[$i2]; ?> </div>
+                    </div>
+                </a>
+            </div>
+          <?php endif;?>
+
+          <?php if($nomlivre[$i3][0]==$S || $nomlivre[$i3][0]== strtolower($S) ): ?>
+            <div id="hide2"class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                         <div class="title-card text-danger text-center"><?php echo $nomlivre[$i3]; ?> </div>
+                    </div>
+                </a>
+            </div>
+          <?php endif;?>
+
+          <?php if($nomlivre[$i4][0]==$S || $nomlivre[$i4][0]== strtolower($S) ): ?>
+            <div id="hide3" class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                            <div class="title-card text-danger text-center"><?php echo $nomlivre[$i4]; ?> </div>
+                    </div>
+                </a>
+            </div>
+          <?php endif;?>
+        </div>
+    </div>
+    <?php endif;?>
+    <?php endfor;?>
+    <?php $a=69; $b=69; $S++; ?>
+    <?php endwhile;?>
+    
+
+    <?php for($i=0;$i<sizeof($nomlivre);$i++): ?>
+    <?php if(is_numeric($nomlivre[$i][0])==1): ?>
+        <div class="book-line">
+        <?php if($b<70): ?>
+            <h1 id="first_letter" class="text-primary"><?php echo "Numeric";?></h1>
+        <?php $b=70; endif; ?>
+        <hr>
+        <div class="row">
+            <div class="col my-2 col-md-3 col-sm-4 col-6">
+                <a class="card" href="#">
+                    <img src="recommendation book_01.jpg" class="card-img-top">
+                    <div class="card-body p-1">
+                        <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
+    <?php endfor;?>            
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php $f=$f2=$f3=$f5=0; $c=$c2=$c3=$c=2; ?>
+
+    <div class="container">
+        <?php while($S<= 'Z'): ?>
+        <?php for($i=$f5;$i<sizeof($nomlivre);$i++): ?>
+        <?php if($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S) ): ?>
+        <div class="book-line my-3">
+            <?php if($a<70): ?>
+                <h1 id="first_letter" class="text-primary"><?php echo $S;?></h1>
+            <?php $a=70; endif; ?>
+            <hr>
+            <div class="row">
+              <?php for($i=0; ($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S)) && $c==2 ; $i++): ?>
+               <?php //if($nomlivre[$i][0]!=$S || $nomlivre[$i][0]== strtolower($S) ): ?>
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                        </div>
+                    </a>
+                </div>
+              <?php $c=1; $f=$i+1; $f5=$i+1; endfor;?>
+              <?php if($i==70) { $f=70; } ?>
+
+              <?php for($i=$f; ($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S))&& $c2==2; $i++): ?>
+                <div id="hide" class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                        </div>
+                    </a>
+                </div>
+              <?php $c2=1; $f2=$i+1; $f5=$i+1; endfor;?>
+              <?php if($i==70) { $f2=70; } ?>
+
+              <?php for($i=$f2; ($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S)) && $c3==2; $i++): ?>
+                <div id="hide2"class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                             <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                        </div>
+                    </a>
+                </div>
+              <?php $c3=1; $f3=$i+1; $f5=$i+1; endfor;?>
+              <?php if($i==70) { $f3=70; } ?>
+
+              <?php for($i=$f3; ($nomlivre[$i][0]==$S || $nomlivre[$i][0]== strtolower($S)) && $c4==2 ; $i++): ?>
+                <div id="hide3" class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                                <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                        </div>
+                    </a>
+                </div>
+              <?php $c4=1; $f5=$i+1; endfor;?>
+              <?php if($i==70) { $f5=0;  $S++; } ?>
+
+            </div>
+        </div>
+        <?php endif;?>
+        <?php endfor;?>
+        <?php $a=69; $b=69; $S++; ?>
+        <?php endwhile;?>
+        
+
+        <?php for($i=0;$i<sizeof($nomlivre);$i++): ?>
+        <?php if(is_numeric($nomlivre[$i][0])==1): ?>
+            <div class="book-line">
+            <?php if($b<70): ?>
+                <h1 id="first_letter" class="text-primary"><?php echo "Numeric";?></h1>
+            <?php $b=70; endif; ?>
+            <hr>
+            <div class="row">
+                <div class="col my-2 col-md-3 col-sm-4 col-6">
+                    <a class="card" href="#">
+                        <img src="recommendation book_01.jpg" class="card-img-top">
+                        <div class="card-body p-1">
+                            <div class="title-card text-danger text-center"><?php echo $nomlivre[$i]; ?> </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
