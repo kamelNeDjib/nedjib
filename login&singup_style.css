@@ -1,0 +1,99 @@
+.container_box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+}
+
+.box label {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 20px;
+    transition: .4s;
+}
+
+.box input {
+    border: solid 1px black;
+    border-radius: 5px;
+    height: 50px;
+    width: 250px;
+}
+
+.box input:focus+label {
+    top: 10px;
+    font-size: 15px;
+    opacity: .5;
+}
+
+.box_error {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 300px;
+    animation: message 1 7s linear;
+    display: none;
+}
+
+#error_message {
+    background-color: rgba(243, 0, 0, 0.808);
+    text-align: center;
+    text-align-last: center;
+    color: white;
+    font-size: 17px;
+    outline: solid 2px rgba(243, 0, 0, 0.808);
+    outline-offset: 5px;
+}
+
+.checkbox_aria {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.check_box_lab {
+    text-align: center;
+    text-align-last: center;
+}
+
+@keyframes message {
+    20% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    40% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    60% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    80% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}

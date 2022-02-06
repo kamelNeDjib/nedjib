@@ -1,0 +1,268 @@
+* {
+    user-select: none;
+}
+
+#bg-img {
+    background-image: url(../header_img2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-toggler {
+    color: rgb(179, 232, 245);
+}
+
+#title {
+    font-family: cursive;
+    /*font-size: 46px;*/
+    color: rgb(255, 252, 53);
+}
+
+#discp {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-family: cursive;
+}
+
+.box {
+    transform: scale(0);
+    background-color: rgb(12, 100, 177);
+    animation: 1 2s animation_one linear forwards;
+    /*animation-delay: 5s;*/
+}
+
+@keyframes animation_one {
+    to {
+        transform: scale(1);
+    }
+}
+
+.recomadition_book .container {
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+.new_book .container {
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+.card {
+    width: 200px;
+    transition: .4s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 1px 5px 15px #888888;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-card {
+    width: 90%;
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recomadition_book .container,
+.new_book .container {
+    overflow: hidden;
+}
+
+.the_outside {
+    position: relative;
+}
+
+.the_outside button {
+    position: absolute;
+    border: none;
+}
+
+.the_outside button {
+    width: 30px;
+    height: 30px;
+}
+
+#next_01,
+#next_02 {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background: url(../next.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#previous_01,
+#previous_02 {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    background: url(../previous.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.big-box-card {
+    flex-direction: column;
+    align-items: center;
+}
+
+.big-card {
+    width: 320px;
+    height: 430px;
+    border: solid 1px rgb(20, 20, 20);
+    position: relative;
+    overflow: hidden;
+}
+
+.big-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.big-card .animation-text {
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    font-family: cursive;
+    animation: 10s 3;
+}
+
+@keyframes drop_down_bg {
+    20% {
+        top: 0;
+    }
+    40% {
+        top: 0;
+    }
+    60% {
+        top: 0;
+    }
+    80% {
+        top: -100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+#text_01,
+#text_001 {
+    top: 0;
+    left: -100%;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    animation: 1 1s forwards;
+    animation-delay: 2s;
+}
+
+#text_02,
+#text_002 {
+    top: 70px;
+    right: -100%;
+    font-size: 40px;
+    color: rgb(251, 255, 0);
+    animation: 1 1s forwards;
+    animation-delay: 2.5s;
+}
+
+#text_03,
+#text_003 {
+    top: 120px;
+    transform: scale(0);
+    font-size: 50px;
+    color: rgb(0, 183, 255);
+    animation: 1 1s forwards;
+    animation-delay: 3s;
+}
+
+#text_04,
+#text_004 {
+    top: 180px;
+    opacity: 0;
+    font-size: 40px;
+    color: rgb(0, 255, 119);
+    animation: 1 1s forwards;
+    animation-delay: 3.5s;
+}
+
+#text_05,
+#text_005 {
+    top: 100%;
+    opacity: 0;
+    font-size: 40px;
+    color: rgb(255, 53, 53);
+    animation: 1 1s forwards;
+    animation-delay: 4s;
+}
+
+@keyframes txt_anime_01 {
+    to {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes txt_anime_02 {
+    to {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes txt_anime_03 {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes txt_anime_04 {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes txt_anime_05 {
+    to {
+        opacity: 1;
+        top: 240px;
+    }
+}
+
+.big-card-title {
+    width: 320px;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
